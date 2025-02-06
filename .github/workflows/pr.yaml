@@ -24,7 +24,9 @@ jobs:
           go install github.com/gohugoio/hugo@latest
 
       - name: Build pages
-        run: ~/go/bin/hugo
+        run: |
+           cd shiftleft
+           ~/go/bin/hugo
 
       - name: Build Docker Image
         run: sudo docker build . --tag ${GITHUB_REPOSITORY}:${GITHUB_SHA}
