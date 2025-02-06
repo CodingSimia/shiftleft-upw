@@ -2,7 +2,7 @@
 name: Run on PR Creation
 
 on:
-  pull_request
+  workflow_dispatch:
 
 permissions:
   contents: read
