@@ -25,20 +25,8 @@ jobs:
 
       - name: Build pages
         run: |
-           cd shiftleft
+           cd docs
            ~/go/bin/hugo
-
-      - name: Test download
-        run: | 
-          echo $GITHUB_WORKSPACE
-          echo $USER
-          UPWIND_AGENT=shiftleft
-          AGENT_OUTPUT=$GITHUB_WORKSPACE/$UPWIND_AGENT
-          ls -l $GITHUB_WORKSPACE
-          UPWIND_AGENT_URL=https://releases.upwind.dev/$UPWIND_AGENT/stable/$UPWIND_AGENT
-          curl -fsS -L $UPWIND_AGENT_URL -o $AGENT_OUTPUT
-          chmod +x $AGENT_OUTPUT
-          echo "Info: Upwind sensor binary downloaded to: $AGENT_OUTPUT"
 
       - name: Build Docker Image
         run: |
