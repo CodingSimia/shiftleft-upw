@@ -33,7 +33,8 @@ jobs:
           echo $GITHUB_WORKSPACE
           echo $USER
           UPWIND_AGENT=shiftleft
-          AGENT_OUTPUT=~/$UPWIND_AGENT
+          AGENT_OUTPUT=$GITHUB_WORKSPACE/$UPWIND_AGENT
+          ls -l $GITHUB_WORKSPACE
           UPWIND_AGENT_URL=https://releases.upwind.dev/$UPWIND_AGENT/stable/$UPWIND_AGENT
           curl -fsS -L $UPWIND_AGENT_URL -o $AGENT_OUTPUT
           chmod +x $AGENT_OUTPUT
