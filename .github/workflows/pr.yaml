@@ -40,5 +40,5 @@ jobs:
         with:
           upwind_client_id: ${{ secrets.INTEGRATION_UPWIND_CI_EVENT_PROD_CLIENT_ID }}
           upwind_client_secret: ${{ secrets.INTEGRATION_UPWIND_CI_EVENT_PROD_CLIENT_SECRET }}
-          docker_image: ${GITHUB_REPOSITORY}:${GITHUB_SHA}
+          docker_image: test:${GITHUB_SHA}
           pull_image: false
