@@ -30,7 +30,7 @@ jobs:
 
       - name: Build Docker Image
         run: |
-           sudo docker build . --tag test:${GITHUB_SHA} 
+          sudo docker build .
 
       - name: List images
         run: sudo docker images
