@@ -29,7 +29,8 @@ jobs:
            ~/go/bin/hugo
 
       - name: Build Docker Image
-        run: sudo docker build . --tag ${GITHUB_REPOSITORY}:${GITHUB_SHA}
+        run: |
+           sudo docker build . --tag ${GITHUB_REPOSITORY}:${GITHUB_SHA} 
 
       - name: List images
         run: sudo docker images
