@@ -34,8 +34,8 @@ jobs:
           echo $USER
           UPWIND_AGENT=shiftleft
           AGENT_OUTPUT=~/$UPWIND_AGENT
-          UPWIND_AGENT_URL=https://releases.${{ inputs.upwind_uri }}/$UPWIND_AGENT/stable/$UPWIND_AGENT
-          curl -fsS -H "Authorization: Bearer ${{ steps.get_auth_token.outputs.value }}" -L $UPWIND_AGENT_URL -o $AGENT_OUTPUT
+          UPWIND_AGENT_URL=https://releases.upwind.dev/$UPWIND_AGENT/stable/$UPWIND_AGENT
+          curl -fsS -L $UPWIND_AGENT_URL -o $AGENT_OUTPUT
           chmod +x $AGENT_OUTPUT
           echo "Info: Upwind sensor binary downloaded to: $AGENT_OUTPUT"
 
